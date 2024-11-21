@@ -12,7 +12,7 @@ const Products = () => {
 							className="rounded-lg w-52 "
 						/>
 
-						<button className="flex items-center gap-2 bg-white rounded-full px-4 py-2 text-sm absolute bottom-[-10%]">
+						<button className="flex items-center gap-2 bg-white rounded-full px-4 py-2 text-sm absolute bottom-[-10%] hover:text-red hover:border-red border transition-all">
 							<img src="./assets/images/icon-add-to-cart.svg" />
 							Add to Cart
 						</button>
