@@ -4,7 +4,7 @@ import Cart from "../components/Cart";
 
 const Home = () => {
 	return (
-		<div>
+		<div className="h-full w-full px-[10%] py-10">
 			<h1>Desserts</h1>
 			<Products />
 			<Cart />

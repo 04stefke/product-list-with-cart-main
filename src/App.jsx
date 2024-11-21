@@ -2,7 +2,7 @@ import Home from "./pages/Home";
 
 function App() {
 	return (
-		<div>
+		<div className="h-min-screen w-max-screen">
 			<Home />
 		</div>
 	);
