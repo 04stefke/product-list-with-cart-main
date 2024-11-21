@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				red: "hsl(14, 86%, 42%)",
+				redDarker: "hsl(14, 86%, 30%)",
 				green: "hsl(159, 69%, 38%)",
 				rose: {
 					50: "hsl(20, 50%, 98%)",
