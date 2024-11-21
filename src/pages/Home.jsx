@@ -5,7 +5,7 @@ import Cart from "../components/Cart";
 const Home = () => {
 	return (
 		<div className="h-full w-full px-[10%] py-10 flex justify-evenly ">
-			<div className="">
+			<div className="flex flex-col gap-5">
 				<h1 className="text-3xl font-bold">Desserts</h1>
 				<Products />
 			</div>
