@@ -6,7 +6,7 @@ const Products = () => {
 			<ul>
 				{productsData.map((product) => (
 					<li key={product.id}>
-						<img src={product.image} alt={product.name} />
+						<img src={product.image.thumbnail} alt={product.name} />
 						<h2>{product.name}</h2>
 						<p>{product.description}</p>
 						<button>Add to Cart</button>
