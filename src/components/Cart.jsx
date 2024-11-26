@@ -7,12 +7,15 @@ const Cart = () => {
 		totalItems,
 		items,
 		removeItem,
+		updateQuantity,
+		subtotalPrice,
+		totalPrice,
+		checkout,
 	} = useCart();
-
 	if (isEmpty)
 		return (
 			<div className="md:w-1/2 w-full bg-white h-fit p-6 flex flex-col  gap-5 rounded-lg">
-				<h2 className="text-xl text-red font-bold">Your Cart(0)</h2>
+				<h2 className="text-xl text-red font-bold">Your Cart (0)</h2>
 				<img
 					src="./assets/images/illustration-empty-cart.svg"
 					alt="remove item svg"
@@ -23,19 +26,20 @@ const Cart = () => {
 				</p>
 			</div>
 		);
-
 	return (
 		<div className="md:w-1/2 w-full bg-white h-fit p-6 flex flex-col gap-5 rounded-lg">
-			<h2 className="text-xl text-red font-bold">Your Cart({totalItems})</h2>
+			<h2 className="text-xl text-red font-bold">Your Cart ({totalItems})</h2>
 			{items.map((item) => (
 				<div key={item.id}>
 					<div className="border-b py-4">
 						<h3 className="">{item.name}</h3>
 						<div className="flex justify-between items-center">
 							<div className="flex items-center gap-5">
-								<p className="text-red">{item.quantity}</p>
+								<p className="text-red">{item.quantity}x</p>
 								<p className="text-rose-300">@ ${item.price.toFixed(2)}</p>
-								<p className="text-rose-500">123</p>
+								<p className="text-rose-500">
+									${(item.quantity * item.price).toFixed(2)}
+								</p>
 							</div>
 							<button
 								className="border-2 border-rose-300 rounded-full p-1 hover:border-rose-500"
@@ -53,7 +57,12 @@ const Cart = () => {
 			))}
 			<div className="flex items-center justify-between">
 				<p>Order Total</p>
-				<p className="font-bold text-2xl">$2,100</p>
+				<p className="font-bold text-2xl">
+					$
+					{items
+						.reduce((acc, item) => acc + item.price * item.quantity, 0)
+						.toFixed(2)}
+				</p>
 			</div>
 			<div className="flex items-center justify-center gap-5 bg-rose-100 py-4 px-4 rounded-lg">
 				<img src="./assets/images/icon-carbon-neutral.svg" alt="" />
