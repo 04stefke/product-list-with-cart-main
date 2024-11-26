@@ -2,7 +2,7 @@ import React from "react";
 
 const Cart = () => {
 	return (
-		<div className="w-full bg-white h-fit p-6 flex flex-col gap-5 rounded-lg">
+		<div className="md:w-1/2 w-full bg-white h-fit p-6 flex flex-col gap-5 rounded-lg">
 			<h2 className="text-xl text-red font-bold">Your Cart(7)</h2>
 			<div className="border-b py-4">
 				<h3 className="">Item title</h3>
