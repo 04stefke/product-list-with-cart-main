@@ -1,10 +1,12 @@
 import React from "react";
 import productsData from "../api/data.json";
+import { useCart } from "react-use-cart";
 const Products = () => {
+	const { addItem } = useCart();
 	return (
 		<ul className="flex flex-wrap items-center justify-center md:justify-start gap-5 w-full">
 			{productsData.map((product) => (
-				<li key={product.id} className="flex flex-col justify-between gap-10">
+				<li key={product.id} className="flex flex-col justify-between gap-10" onClick={() => addItem(product)}>
 					<div className="flex flex-col items-center relative">
 						<img
 							src={product.image.desktop}

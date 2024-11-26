@@ -1,6 +1,23 @@
 import React from "react";
+import { useCart } from "react-use-cart";
 
 const Cart = () => {
+	const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } =
+		useCart();
+
+	if (isEmpty)
+		return (
+			<div className="md:w-1/2 w-full bg-white h-fit p-6 flex flex-col  gap-5 rounded-lg">
+				<h2 className="text-xl text-red font-bold">Your Cart(0)</h2>
+				<img
+					src="./assets/images/illustration-empty-cart.svg"
+					alt="remove item svg"
+					className="w-72 place-self-center"
+				/>
+				<p className="text-rose-500 place-self-center">Your added items will appear here</p>
+			</div>
+		);
+
 	return (
 		<div className="md:w-1/2 w-full bg-white h-fit p-6 flex flex-col gap-5 rounded-lg">
 			<h2 className="text-xl text-red font-bold">Your Cart(7)</h2>
